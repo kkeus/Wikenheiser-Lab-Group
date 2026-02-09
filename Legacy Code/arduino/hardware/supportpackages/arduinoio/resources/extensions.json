@@ -1,0 +1,19 @@
+{
+    "mw": {
+        "addons": {
+            "identifier": "ML_ARDUINO",
+            "previewImage": "arduino_screenshot.png",
+            "setup": "arduinosetup",
+            "gettingStarted": {
+                "externalDocumentationUrl": "https://www.mathworks.com/help/matlab/arduinoio-get-started-with-matlab-support-package-for-arduino-hardware.html"
+            },
+            "provider": {
+                "name": "MathWorks",
+                "icon": "matlabLogoUI"
+            },
+            "compatibility": {
+                "platforms": ["win64", "maci64", "maca64", "glnxa64", "ml_online"]
+            }
+        }
+    }
+}

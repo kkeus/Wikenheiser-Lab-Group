@@ -1,0 +1,486 @@
+{
+"arduino":
+{
+    "inputs":
+    [
+        {"name":"Port", "kind":"required", "type":"choices=matlabshared.hwsdk.internal.tabCompletionHelper.getAvailablePorts()"},
+        {"name":"Board", "kind":"required", "type":"choices=arduinoio.internal.TabCompletionHelper.getSupportedBoards()" },
+        {"name":"Libraries", "kind":"namevalue", "type":"choices=listArduinoLibraries()" },
+        {"name":"TraceOn", "kind":"namevalue", "type":"logical"},
+        {"name":"ForceBuildOn", "kind":"namevalue", "type":"logical"},
+        {"name":"AnalogReference", "kind":"namevalue", "type":["numeric", "scalar"]},
+        {"name":"AnalogReferenceMode", "kind":"namevalue", "type":["char", "choices={'internal','external'}"]},
+        {"name":"BaudRate", "kind":"namevalue", "type":["numeric", "scalar"]}
+    ],
+    "outputs":
+    [
+        {"name":"obj", "type":"arduino"}
+    ]
+},
+"arduino.servo":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required","type":"arduino"},
+        {"name":"pin","kind":"required","type":["char", "choices=arduinoio.internal.TabCompletionHelper.getServoPins(obj)"]},
+        {"name":"MinPulseDuration", "kind":"namevalue", "type":["numeric", "scalar"]},
+        {"name":"MaxPulseDuration", "kind":"namevalue", "type":["numeric", "scalar"]}
+    ],
+    "outputs":
+    [
+        {"name":"servoObj", "type":"arduinoio.Servo"}
+    ]
+},
+"arduino.playTone":
+{
+    "inputs":
+    [
+		{"name":"obj","kind":"required","type":"arduino"},
+        {"name":"pin", "kind":"required", "type":["char", "choices=obj.AvailableDigitalPins"]},
+		{"name":"frequency", "kind":"optional", "type":["numeric", "scalar"]},
+        {"name":"duration", "kind":"optional", "type":["numeric", "scalar"]}
+    ]
+},
+"arduinoioaddons.adafruit.motorshieldv2.servo":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required","type":"arduinoioaddons.adafruit.motorshieldv2"},
+        {"name":"motornum","kind":"required","type":"choices={1,2}"},
+        {"name":"MinPulseDuration", "kind":"namevalue", "type":["numeric", "scalar"]},
+        {"name":"MaxPulseDuration", "kind":"namevalue", "type":["numeric", "scalar"]}
+    ],
+    "outputs":
+    [
+        {"name":"stepperObj", "type":"arduinoioaddons.adafruit.Servo"}
+    ]
+},
+"arduinoioaddons.adafruit.motorshieldv2.stepper":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required","type":"arduinoioaddons.adafruit.motorshieldv2"},
+        {"name":"motornum","kind":"required","type":"choices={1,2}"},
+        {"name":"sprev", "kind":"required", "type":["numeric", "scalar"]},
+        {"name":"RPM", "kind":"namevalue", "type":["numeric", "scalar"]},
+        {"name":"StepType", "kind":"namevalue", "type":["char", "choices=arduinoio.internal.TabCompletionHelper.getStepTypes"]}
+    ],
+    "outputs":
+    [
+        {"name":"stepperObj", "type":"arduinoioaddons.adafruit.stepper"}
+    ]
+},
+"arduinoioaddons.adafruit.motorshieldv2.dcmotor":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required","type":"arduinoioaddons.adafruit.motorshieldv2"},
+        {"name":"motornum","kind":"required","type":"choices={1,2,3,4}"},
+        {"name":"Speed", "kind":"namevalue", "type":["numeric", "scalar"]}
+    ],
+    "outputs":
+    [
+        {"name":"dcmotorObj", "type":"arduinoioaddons.adafruit.dcmotor"}
+    ]
+},
+"arduino.shiftRegister":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required","type":"arduino"},
+        {"name":"type","kind":"required","type":["char", "choices={'74HC165'}"]},
+        {"name":"dataPin", "kind":"required", "type":["char", "choices=obj.AvailableDigitalPins"]},
+        {"name":"clockPin", "kind":"required", "type":["char", "choices=obj.AvailableDigitalPins"]},
+        {"name":"loadPin", "kind":"required", "type":["char", "choices=obj.AvailableDigitalPins"]},
+        {"name":"clockEnablePin", "kind":"required", "type":["char", "choices=obj.AvailableDigitalPins"]}
+    ],
+    "outputs":
+    [
+        {"name":"register", "type":"arduinoio.ShiftRegister"}
+    ]
+},
+"arduino.shiftRegister":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required","type":"arduino"},
+        {"name":"type","kind":"required","type":["char", "choices={'74HC164'}"]},
+        {"name":"dataPin", "kind":"required", "type":["char", "choices=obj.AvailableDigitalPins"]},
+        {"name":"clockPin", "kind":"required", "type":["char", "choices=obj.AvailableDigitalPins"]},
+        {"name":"resetPin", "kind":"optional", "type":["char", "choices=obj.AvailableDigitalPins"]}
+    ],
+    "outputs":
+    [
+        {"name":"register", "type":"arduinoio.ShiftRegister"}
+    ]
+},
+"arduino.shiftRegister":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required","type":"arduino"},
+        {"name":"type","kind":"required","type":["char", "choices={'74HC595'}"]},
+        {"name":"dataPin", "kind":"required", "type":["char", "choices=obj.AvailableDigitalPins"]},
+        {"name":"clockPin", "kind":"required", "type":["char", "choices=obj.AvailableDigitalPins"]},
+        {"name":"latchPin", "kind":"required", "type":["char", "choices=obj.AvailableDigitalPins"]},
+        {"name":"resetPin", "kind":"optional", "type":["char", "choices=obj.AvailableDigitalPins"]}
+    ],
+    "outputs":
+    [
+        {"name":"register", "type":"arduinoio.ShiftRegister"}
+    ]
+},
+"arduinoio.ShiftRegister.write":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required","type":"arduinoio.ShiftRegister"},
+        {"name":"value","kind":"required","type":[["numeric", "vector"],["char"]]},
+        {"name":"precision", "kind":"optional", "type":"choices=arduinoio.internal.TabCompletionHelper.getShiftRegisterWritePrecisions()"}
+    ]
+},
+"arduinoio.ShiftRegister.read":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required","type":"arduinoio.ShiftRegister"},
+        {"name":"precision", "kind":"optional", "type":"choices=arduinoio.internal.TabCompletionHelper.getShiftRegisterReadPrecisions()"}
+    ],
+    "outputs":
+    [
+        {"name":"dataOut", "type":["numeric", "vector"]}
+    ]
+},
+"arduino.rotaryEncoder":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required","type":"arduino"},
+        {"name":"channelA", "kind":"required", "type":["char", "choices=arduinoio.internal.TabCompletionHelper.getInterruptPins(obj)"]},
+        {"name":"channelB", "kind":"required", "type":["char", "choices=arduinoio.internal.TabCompletionHelper.getInterruptPins(obj, channelA)"]},
+        {"name":"ppr", "kind":"optional", "type":["numeric", "scalar"]}
+    ],
+    "outputs":
+    [
+        {"name":"encoder", "type":"arduinoio.RotaryEncoder"}
+    ]
+},
+"arduinoio.RotaryEncoder.readCount":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required","type":"arduinoio.RotaryEncoder"},
+        {"name":"Reset", "kind":"namevalue", "type":"logical"},
+        {"name":"OutputFormat", "kind":"namevalue", "type":"choices={'duration'}"}
+    ],
+    "outputs":
+    [
+        {"name":"count", "type":["numeric", "scalar"]},
+        {"name":"time", "type":["numeric", "scalar"]}
+    ]
+},
+"arduinoio.RotaryEncoder.readSpeed":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required","type":["vector", "arduinoio.RotaryEncoder"]}
+    ],
+    "outputs":
+    [
+        {"name":"rpm", "type":["numeric", "scalar"]}
+    ]
+},
+"arduinoio.RotaryEncoder.resetCount":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required","type":"arduinoio.RotaryEncoder"}
+    ]
+},
+"arduino.ultrasonic":
+{
+    "inputs":
+    [
+        {"name":"obj", "kind":"required", "type":"arduino"},
+        {"name":"triggerPin", "kind":"required", "type":["char", "choices=obj.AvailableDigitalPins"]},
+        {"name":"echoPin", "kind":"optional", "type":["char", "choices=obj.AvailableDigitalPins"]},
+        {"name":"OutputFormat", "kind":"namevalue", "type":"choices={'double'}"}
+    ],
+    "outputs":
+    [
+        {"name":"ultrasonic", "type":"arduinoio.Ultrasonic"}
+    ]
+},
+"arduinoio.Ultrasonic.readDistance":
+{
+    "inputs":
+    [
+        {"name":"obj", "kind":"required", "type":"arduinoio.Ultrasonic"}
+    ],
+    "outputs":
+    [
+        {"name":"distance", "type":["numeric", "scalar"]},
+        {"name":"timestamp", "type":["datetime", "scalar"]}
+    ]
+},
+"arduinoio.Ultrasonic.readEchoTime":
+{
+    "inputs":
+    [
+        {"name":"obj", "kind":"required", "type":"arduinoio.Ultrasonic"}
+    ],
+    "outputs":
+    [
+        {"name":"travelTime", "type":["numeric", "scalar"]},
+        {"name":"timestamp", "type":["datetime", "scalar"]}
+    ]
+},
+
+"arduino.motorCarrier":
+{
+    "inputs":
+    [
+        {"name":"obj", "kind":"required", "type":"arduino"}
+    ],
+    "output":
+    [
+        {"name":"mcObj", "type":"arduinoio.motorcarrier.MotorCarrier"}
+    ]
+},
+
+"arduinoio.motorcarrier.MotorCarrier.dcmotor":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required", "type":"arduinoio.motorcarrier.MotorCarrier"},
+        {"name":"motornum", "kind":"required", "type":["char","choices=arduinoio.internal.TabCompletionHelper.getMCDCMotorNumber()"]},
+        {"name":"Speed", "kind":"namevalue", "type":["numeric", "scalar"]}
+    ],
+    "outputs":
+    [
+        {"name":"dcmotorObj", "type":"arduinoio.motorcarrier.DCMotor"}
+    ]
+},
+
+"arduinoio.motorcarrier.MotorCarrier.servo":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required", "type":"arduinoio.motorcarrier.MotorCarrier"},
+        {"name":"motornum", "kind":"required", "type":["numeric","choices=arduinoio.internal.TabCompletionHelper.getMCServoNumber()"]}
+    ],
+    "outputs":
+    [
+        {"name":"servoObj", "type":"arduinoio.motorcarrier.Servo"}
+    ]
+},
+
+"arduinoio.motorcarrier.MotorCarrier.rotaryEncoder":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required", "type":"arduinoio.motorcarrier.MotorCarrier"},
+        {"name":"encodernum", "kind":"required","type":["numeric","choices=arduinoio.internal.TabCompletionHelper.getMCRotaryEncoderNumber()"]},
+        {"name":"ppr", "kind":"optional", "type":["numeric","scalar"]}
+    ],
+    "outputs":
+    [
+        {"name":"encoderObj", "type":"arduinoio.motorcarrier.RotaryEncoder"}
+    ]
+},
+
+"arduinoio.motorcarrier.MotorCarrier.pidMotor":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required", "type":"arduinoio.motorcarrier.MotorCarrier"},
+        {"name":"pidnum", "kind":"required","type":["numeric","choices=arduinoio.internal.TabCompletionHelper.getMCPIDNumber()"]},
+        {"name":"controlMode", "kind":"optional","type":["char","choices=arduinoio.internal.TabCompletionHelper.getPIDControlMode()"]},
+        {"name":"ppr", "kind":"optional", "type":["numeric","scalar"]},
+        {"name":"PIDGains", "kind":"optional", "type":["numeric","vector"]}
+    ],
+    "outputs":
+    [
+        {"name":"pidmotorObj", "type":"arduinoio.motorcarrier.PIDMotor"}
+    ]
+},
+"arduinoio.motorcarrier.Servo.writePosition":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required", "type":"arduinoio.motorcarrier.Servo"},
+        {"name":"position", "kind":"required","type":["numeric","scalar"]}
+    ]
+},
+"arduinoio.motorcarrier.DCMotor.start":   
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required", "type":"arduinoio.motorcarrier.DCMotor"}
+    ]
+},
+"arduinoio.motorcarrier.DCMotor.stop":   
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required", "type":"arduinoio.motorcarrier.DCMotor"}
+    ]
+},
+"arduinoio.motorcarrier.PIDMotor.writeSpeed":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required", "type":"arduinoio.motorcarrier.PIDMotor"},
+        {"name":"speed", "kind":"required","type":["numeric","scalar"]}
+    ]
+},
+"arduinoio.motorcarrier.RotaryEncoder.readCount":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required","type":"arduinoio.motorcarrier.RotaryEncoder"},
+        {"name":"Reset", "kind":"namevalue", "type":"logical"}
+    ],
+    "outputs":
+    [
+        {"name":"count", "type":["numeric", "scalar"]},
+        {"name":"timestamp", "type":["datetime", "scalar"]}
+    ]
+},
+"arduinoio.motorcarrier.RotaryEncoder.readSpeed":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required","type":["vector", "arduinoio.motorcarrier.RotaryEncoder"]}
+    ],
+    "outputs":
+    [
+        {"name":"rpm", "type":["numeric", "scalar"]},
+        {"name":"timestamp", "type":["datetime", "scalar"]}
+    ]
+},
+"arduinoio.motorcarrier.RotaryEncoder.resetCount":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required","type":"arduinoio.motorcarrier.RotaryEncoder"}
+    ]
+},
+"arduinoio.motorcarrier.PIDMotor.writeAngularPosition":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required", "type":"arduinoio.motorcarrier.PIDMotor"},
+        {"name":"position", "kind":"required","type":["numeric","scalar"]},
+        {"name":"mode","kind":"optional","type":["char", "choices=arduinoio.internal.TabCompletionHelper.getAngularPositionMode()"]}
+    ]
+},
+"arduinoio.motorcarrier.PIDMotor.readSpeed":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required", "type":"arduinoio.motorcarrier.PIDMotor"}
+    ],
+    "outputs":
+    [
+        {"name":"speed", "type":["numeric", "scalar"]},
+        {"name":"timestamp", "type":["datetime", "scalar"]}
+    ]
+},
+"arduinoio.motorcarrier.PIDMotor.readAngularPosition":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required", "type":"arduinoio.motorcarrier.PIDMotor"},
+        {"name":"Reset","kind":"namevalue","type":"logical"}
+    ],
+    "outputs":
+    [
+        {"name":"speed", "type":["numeric", "scalar"]},
+        {"name":"timestamp", "type":["datetime", "scalar"]}
+    ]
+},
+"arduino.canChannel":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required","type":"arduino"},
+        {"name":"Device","kind":"required","type":["char", "choices=arduinoio.internal.TabCompletionHelper.getCANDeviceNames(obj)"]},
+        {"name":"BusSpeed", "kind":"namevalue", "type":"choices=arduinoio.internal.TabCompletionHelper.getCANBusSpeeds(obj)"}
+    ],
+    "outputs":
+    [
+        {"name":"canChannelObj", "type":"matlabshared.can.Channel"}
+    ]
+},
+"arduino.canChannel":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required","type":"arduino"},
+        {"name":"MCPDevice","kind":"required","type":["char", "choices={'MCP2515'}"]},
+        {"name":"ChipSelectPin", "kind":"required", "type":["char", "choices=arduinoio.internal.TabCompletionHelper.getCANChipSelectPins(obj)"]},
+        {"name":"InterruptPin", "kind":"required", "type":["char", "choices=arduinoio.internal.TabCompletionHelper.getCANInterruptPins(obj, ChipSelectPin)"]},
+        {"name":"OscillatorFrequency", "kind":"namevalue", "type":"choices=arduinoio.internal.TabCompletionHelper.getCANOscillatorFrequencies(obj)"},
+        {"name":"BusSpeed", "kind":"namevalue", "type":"choices=arduinoio.internal.TabCompletionHelper.getCANBusSpeeds(obj)"}
+    ],
+    "outputs":
+    [
+        {"name":"canChannelObj", "type":"matlabshared.can.Channel"}
+    ]
+},
+
+"arduino.apds9960":
+{
+    "inputs":
+    [
+        {"name":"obj", "kind":"required", "type":"arduino"},
+        {"name":"Bus", "kind":"namevalue", "type":"choices=num2cell(obj.AvailableI2CBusIDs)"},
+        {"name":"BitRate", "kind":"namevalue", "type":["numeric", "scalar"]}
+    ],
+    "output":
+    [
+        {"name":"apds9960Obj", "type":"arduinoio.sensors.apds9960.APDS9960"}
+    ]
+},
+
+"arduinoio.sensors.apds9960.APDS9960.readColor":
+{
+    "inputs":
+    [
+        {"name":"obj", "kind":"required", "type":"arduinoio.sensors.apds9960.APDS9960"},
+        {"name":"colorMode", "kind":"positional", "type":"choices={'raw','normalized'}"}
+    ]
+
+},
+
+"arduinoio.sensors.apds9960.APDS9960.readProximity":
+{
+    "inputs":
+    [
+        {"name":"obj", "kind":"required", "type":"arduinoio.sensors.apds9960.APDS9960"}
+    ]
+
+},
+
+"arduinoio.sensors.apds9960.APDS9960.readGesture":
+{
+    "inputs":
+    [
+        {"name":"obj", "kind":"required", "type":"arduinoio.sensors.apds9960.APDS9960"}
+    ]
+
+},
+
+"arduinolist":
+{
+    "inputs":
+    [
+        {"name":"Timeout", "kind":"namevalue", "type":["numeric", "scalar"]}
+    ],
+    "outputs":
+    [
+        {"name":"deviceList", "type":"table"}
+    ]
+}
+}

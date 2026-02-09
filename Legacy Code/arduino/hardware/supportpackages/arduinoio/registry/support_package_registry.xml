@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--Copyright 2014-2023 The MathWorks, Inc. -->
+<RTTPackageRepository>
+    <SupportPackage 
+        name="Arduino I/O" 
+        fullname="MATLAB Support Package for Arduino Hardware" 
+        displayname="Arduino"
+        version="25.1.0"
+        infotext = "Acquire inputs and send outputs on Arduino boards"
+        infohyperlink = "http://www.mathworks.com/hardware-support/arduino-matlab.html"
+        platform="PCWIN64,GLNXA64,MACI64,MACA64"
+        visible="1"
+        enable="1"
+        baseproduct="MATLAB"
+        basecode="ML_ARDUINO"
+        url="" 
+        downloadurl=""
+        licenseurl=""
+        preuninstallcmd="matlab:arduinoio.preUninstall"
+        firmwareupdate="matlab.hwmgr.internal.hwsetup.register.ArduinoWorkflow"> 
+    </SupportPackage>
+</RTTPackageRepository>

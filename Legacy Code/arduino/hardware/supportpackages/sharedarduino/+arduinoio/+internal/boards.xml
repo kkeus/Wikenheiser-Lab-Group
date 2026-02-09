@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017-2024 The MathWorks, Inc. -->
+<Arduino>
+    <Uno>
+        <BoardName>uno</BoardName>
+        <Package>arduino</Package>
+        <CPU/>
+        <MemorySize>32256</MemorySize>
+        <MCU>atmega328p</MCU>
+        <VID_PID>'0x2341_0x0001','0x2341_0x0043','0x2341_0x0243','0x2a03_0x0043'</VID_PID>
+        <NumPins>20</NumPins>
+        <PinsDigital>2:13</PinsDigital>
+        <PinsAnalog>14:19</PinsAnalog>
+        <PinsPWM>3 5:6 9:11</PinsPWM>
+        <PinsServo>2:19</PinsServo>
+        <PinsI2C>18:19</PinsI2C>
+        <PinsInterrupt>2:3</PinsInterrupt>
+        <ICSPSPI>1</ICSPSPI>
+        <PinsSPI>11:13 10</PinsSPI>
+    </Uno>
+	<UnoR4WiFi>
+      <BoardName>unor4wifi</BoardName>
+      <Package>arduino</Package>
+      <CPU/>
+      <MemorySize>262144</MemorySize>
+      <MCU>cortex-m4</MCU>
+      <VID_PID>'0x2341_0x1002','0x2341_0x006D'</VID_PID>
+      <NumPins>20</NumPins>
+      <PinsDigital>2:13</PinsDigital>
+      <PinsAnalog>14:19</PinsAnalog>
+      <PinsPWM>3 5:6 9:11</PinsPWM>
+      <PinsServo>2:19</PinsServo>
+      <PinsI2C>18:19</PinsI2C>
+      <PinsInterrupt>2:3</PinsInterrupt>
+      <ICSPSPI>1</ICSPSPI>
+      <PinsSPI>11:13 10</PinsSPI>
+   </UnoR4WiFi>
+    <UnoR4Minima>
+      <BoardName>minima</BoardName>
+      <Package>arduino</Package>
+      <CPU/>
+      <MemorySize>262144</MemorySize>
+      <MCU>cortex-m4</MCU>
+      <VID_PID>'0x2341_0x0069','0x2341_0x0369'</VID_PID>
+      <NumPins>20</NumPins>
+      <PinsDigital>2:13</PinsDigital>
+      <PinsAnalog>14:19</PinsAnalog>
+      <PinsPWM>3 5:6 9:11</PinsPWM>
+      <PinsServo>2:19</PinsServo>
+      <PinsI2C>18:19</PinsI2C>
+      <PinsInterrupt>2:3</PinsInterrupt>
+      <ICSPSPI>1</ICSPSPI>
+      <PinsSPI>11:13 10</PinsSPI>
+   </UnoR4Minima>
+    <Nano3>
+        <BoardName>nano</BoardName>
+        <Package>arduino</Package>
+        <CPU>atmega328</CPU>
+        <MemorySize>30720</MemorySize>
+        <MCU>atmega328p</MCU>
+        <VID_PID/>
+        <NumPins>22</NumPins>
+        <PinsDigital>2:13</PinsDigital>
+        <PinsAnalog>14:21</PinsAnalog>
+        <PinsPWM>3 5:6 9:11</PinsPWM>
+        <PinsServo>2:19</PinsServo>
+        <PinsI2C>18:19</PinsI2C>
+        <PinsInterrupt>2:3</PinsInterrupt>
+        <ICSPSPI>1</ICSPSPI>
+        <PinsSPI>11:13 10</PinsSPI>
+    </Nano3>
+    <Nano33IoT>
+        <BoardName>nano_33_iot</BoardName>
+        <Package>arduino</Package>
+        <CPU/>
+        <MemorySize>262144</MemorySize>
+        <MCU>cortex-m0plus</MCU>
+        <VID_PID>'0x2341_0x8057','0x2341_0x0057'</VID_PID>
+        <NumPins>22</NumPins>
+        <PinsDigital>0:13</PinsDigital>
+        <PinsAnalog>14:21</PinsAnalog>
+        <PinsPWM>2:6 9:12 16 17 19</PinsPWM>
+        <PinsServo>0:21</PinsServo>
+        <PinsI2C>18:19</PinsI2C>
+        <PinsInterrupt>2:3 9:11 13 15 19 21</PinsInterrupt>
+        <ICSPSPI/>
+        <PinsSPI>11:13</PinsSPI>
+        <PinsSerial>0:1</PinsSerial>
+    </Nano33IoT>
+    <Nano33BLE>
+        <BoardName>nano33ble</BoardName>
+        <Package>arduino</Package>
+        <CPU/>
+        <MemorySize>1048576</MemorySize>
+        <MCU>cortex-m4</MCU>
+        <VID_PID>'0x2341_0x005a','0x2341_0x805a'</VID_PID>
+        <NumPins>22</NumPins>
+        <PinsDigital>0:13</PinsDigital>
+        <PinsAnalog>14:21</PinsAnalog>
+        <PinsPWM>0:13</PinsPWM>
+        <PinsServo>0:21</PinsServo>
+        <PinsI2C>18:19</PinsI2C>
+        <PinsInterrupt>0:13</PinsInterrupt>
+        <ICSPSPI/>
+        <PinsSPI>11:13</PinsSPI>
+        <PinsSerial>0:1</PinsSerial>
+    </Nano33BLE>
+    <NanoRP2040Connect>
+        <BoardName>nanorp2040connect</BoardName>
+        <Package>arduino</Package>
+        <CPU/>
+        <MemorySize>16777216</MemorySize>
+        <MCU>cortex-m0plus</MCU>
+        <VID_PID>'0x2341_0x005e','0x2341_0x805e','0x2341_0x015e','0x2341_0x025e'</VID_PID>
+        <NumPins>22</NumPins>
+        <PinsDigital>0:21</PinsDigital>
+        <PinsAnalog>14:17 20:21</PinsAnalog>
+        <PinsPWM>0:19</PinsPWM>
+        <PinsServo>0:21</PinsServo>
+        <PinsI2C>18:19</PinsI2C>
+        <PinsInterrupt>0:19</PinsInterrupt>
+        <ICSPSPI/>
+        <PinsSPI>11:13</PinsSPI>
+        <PinsSerial>0:1</PinsSerial>
+    </NanoRP2040Connect>
+    <ProMini328_5V>
+        <BoardName>pro</BoardName>
+        <Package>arduino</Package>
+        <CPU>16MHzatmega328</CPU>
+        <MemorySize>30720</MemorySize>
+        <MCU>atmega328p</MCU>
+        <VID_PID/>
+        <NumPins>22</NumPins>
+        <PinsDigital>2:13</PinsDigital>
+        <PinsAnalog>14:21</PinsAnalog>
+        <PinsPWM>3 5:6 9:11</PinsPWM>
+        <PinsServo>2:19</PinsServo>
+        <PinsI2C>18:19</PinsI2C>
+        <PinsInterrupt>2:3</PinsInterrupt>
+        <ICSPSPI>1</ICSPSPI>
+        <PinsSPI>11:13 10</PinsSPI>
+    </ProMini328_5V>
+    <ProMini328_3V>
+        <BoardName>pro</BoardName>
+        <Package>arduino</Package>
+        <CPU>8MHzatmega328</CPU>
+        <MemorySize>30720</MemorySize>
+        <MCU>atmega328p</MCU>
+        <VID_PID/>
+        <NumPins>22</NumPins>
+        <PinsDigital>2:13</PinsDigital>
+        <PinsAnalog>14:21</PinsAnalog>
+        <PinsPWM>3 5:6 9:11</PinsPWM>
+        <PinsServo>2:19</PinsServo>
+        <PinsI2C>18:19</PinsI2C>
+        <PinsInterrupt>2:3</PinsInterrupt>
+        <ICSPSPI>1</ICSPSPI>
+        <PinsSPI>11:13 10</PinsSPI>
+    </ProMini328_3V>
+    <Mega2560>
+        <BoardName>mega</BoardName>
+        <Package>arduino</Package>
+        <CPU>atmega2560</CPU>
+        <MemorySize>258048</MemorySize>
+        <MCU>atmega2560</MCU>
+        <VID_PID>'0x2341_0x0010','0x2341_0x0042','0x2341_0x0242','0x2341_0x0210','0x2a03_0x0010','0x2a03_0x0042'</VID_PID>
+        <NumPins>70</NumPins>
+        <PinsDigital>2:53</PinsDigital>
+        <PinsAnalog>54:69</PinsAnalog>
+        <PinsPWM>2:13 44:46</PinsPWM>
+        <PinsServo>2:69</PinsServo>
+        <PinsI2C>20:21</PinsI2C>
+        <PinsInterrupt>2:3 18:21</PinsInterrupt>
+        <ICSPSPI>1</ICSPSPI>
+        <PinsSPI>51 50 52 53</PinsSPI>
+        <PinsSerial>14:19</PinsSerial>
+    </Mega2560>
+    <MegaADK>
+        <BoardName>megaADK</BoardName>
+        <Package>arduino</Package>
+        <CPU/>
+        <MemorySize>258048</MemorySize>
+        <MCU>atmega2560</MCU>
+        <VID_PID>'0x2341_0x003f','0x2341_0x0044','0x2a03_0x003f','0x2a03_0x0044'</VID_PID>
+        <NumPins>70</NumPins>
+        <PinsDigital>2:53</PinsDigital>
+        <PinsAnalog>54:69</PinsAnalog>
+        <PinsPWM>2:13 44:46</PinsPWM>
+        <PinsServo>2:69</PinsServo>
+        <PinsI2C>20:21</PinsI2C>
+        <PinsInterrupt>2:3 18:21</PinsInterrupt>
+        <ICSPSPI>1</ICSPSPI>
+        <PinsSPI>51 50 52 53</PinsSPI>
+        <PinsSerial>14:19</PinsSerial>
+    </MegaADK>
+    <Due>
+        <BoardName>arduino_due_x_dbg</BoardName>
+        <Package>arduino</Package>
+        <CPU/>
+        <MemorySize>524288</MemorySize>
+        <MCU>cortex-m3</MCU>
+        <VID_PID>'0x2341_0x003d','0x2341_0x003e','0x2a03_0x003d','0x2a03_0x003e'</VID_PID>
+        <NumPins>72</NumPins>
+        <PinsDigital>2:53 70:71</PinsDigital>
+        <PinsAnalog>54:65</PinsAnalog>
+        <PinsPWM>2:13</PinsPWM>
+        <PinsServo>2:65</PinsServo>
+        <PinsI2C>20:21 70:71</PinsI2C>
+        <PinsInterrupt>2:65</PinsInterrupt>
+        <ICSPSPI>1</ICSPSPI>
+        <PinsSPI/>
+        <PinsSerial>14:19</PinsSerial>
+    </Due>
+    <DigitalSandbox>
+        <BoardName>pro</BoardName>
+        <Package>arduino</Package>
+        <CPU>8MHzatmega328</CPU>
+        <MemorySize>30720</MemorySize>
+        <MCU>atmega328p</MCU>
+        <VID_PID/>
+        <NumPins>20</NumPins>
+        <PinsDigital>2:13</PinsDigital>
+        <PinsAnalog>14:19</PinsAnalog>
+        <PinsPWM>3 5:6 9:11</PinsPWM>
+        <PinsServo>3</PinsServo>
+        <PinsI2C>18:19</PinsI2C>
+        <PinsInterrupt>2:3</PinsInterrupt>
+        <ICSPSPI/>
+        <PinsSPI/>
+    </DigitalSandbox>
+    <Leonardo>
+        <BoardName>leonardo</BoardName>
+        <Package>arduino</Package>
+        <CPU/>
+        <MemorySize>28672</MemorySize>
+        <MCU>atmega32u4</MCU>
+        <VID_PID>'0x2341_0x8036','0x2a03_0x8036'</VID_PID>
+        <NumPins>30</NumPins>
+        <PinsDigital>0:13</PinsDigital>
+        <PinsAnalog>4 6 8 9:10 12 18:23</PinsAnalog>
+        <PinsPWM>3 5:6 9:11 13</PinsPWM>
+        <PinsServo>0:13 18:23</PinsServo>
+        <PinsI2C>2:3</PinsI2C>
+        <PinsInterrupt>0:3 7</PinsInterrupt>
+        <ICSPSPI>1</ICSPSPI>
+        <PinsSPI/>
+        <PinsSerial>0:1</PinsSerial>
+    </Leonardo>
+    <Micro>
+        <BoardName>micro</BoardName>
+        <Package>arduino</Package>
+        <CPU/>
+        <MemorySize>28672</MemorySize>
+        <MCU>atmega32u4</MCU>
+        <VID_PID>'0x2341_0x8037','0x2341_0x8237'</VID_PID>
+        <NumPins>30</NumPins>
+        <PinsDigital>0:13</PinsDigital>
+        <PinsAnalog>4 6 8 9:10 12 18:23</PinsAnalog>
+        <PinsPWM>3 5:6 9:11 13</PinsPWM>
+        <PinsServo>0:13 18:23</PinsServo>
+        <PinsI2C>2:3</PinsI2C>
+        <PinsInterrupt>0:3 7</PinsInterrupt>
+        <ICSPSPI>1</ICSPSPI>
+        <PinsSPI/>
+        <PinsSerial>0:1</PinsSerial>
+    </Micro>
+    <MKR1000>
+        <BoardName>mkr1000</BoardName>
+        <Package>arduino</Package>
+        <CPU/>
+        <MemorySize>262144</MemorySize>
+        <MCU>cortex-m0plus</MCU>
+        <VID_PID>'0x2341_0x804e','0x2341_0x004e','0x2341_0x824e','0x2341_0x024e'</VID_PID>
+        <NumPins>22</NumPins>
+        <PinsDigital>0:14</PinsDigital>
+        <PinsAnalog>15:21</PinsAnalog>
+        <PinsPWM>0:8 10 18 19</PinsPWM>
+        <PinsServo>0:21</PinsServo>
+        <PinsI2C>11:12</PinsI2C>
+        <PinsInterrupt>0:1 4:8 16:17</PinsInterrupt>
+        <PinsSPI>8 10 9</PinsSPI>
+        <ICSPSPI/>
+        <PinsSerial>13:14</PinsSerial>
+    </MKR1000>
+    <MKR1010>
+        <BoardName>mkrwifi1010</BoardName>
+        <Package>arduino</Package>
+        <CPU/>
+        <MemorySize>262144</MemorySize>
+        <MCU>cortex-m0plus</MCU>
+        <VID_PID>'0x2341_0x8054','0x2341_0x0054'</VID_PID>
+        <NumPins>22</NumPins>
+        <PinsDigital>0:14</PinsDigital>
+        <PinsAnalog>15:21</PinsAnalog>
+        <PinsPWM>0:8 10 18 19</PinsPWM>
+        <PinsServo>0:21</PinsServo>
+        <PinsI2C>11:12</PinsI2C>
+        <PinsInterrupt>0:1 4:8 16:17</PinsInterrupt>
+        <PinsSPI>8 10 9</PinsSPI>
+        <ICSPSPI/>
+        <PinsSerial>13:14</PinsSerial>
+    </MKR1010>
+    <MKRZero>
+        <BoardName>mkrzero</BoardName>
+        <Package>arduino</Package>
+        <CPU/>
+        <MemorySize>262144</MemorySize>
+        <MCU>cortex-m0plus</MCU>
+        <VID_PID>'0x2341_0x804f','0x2341_0x004f'</VID_PID>
+        <NumPins>33</NumPins>
+        <PinsDigital>0:14 32</PinsDigital>
+        <PinsAnalog>15:21</PinsAnalog>
+        <PinsPWM>0:8 10 18 19</PinsPWM>
+        <PinsServo>0:21</PinsServo>
+        <PinsI2C>11:12</PinsI2C>
+        <PinsInterrupt>0:1 4:8 16:17</PinsInterrupt>
+        <PinsSPI>8 10 9</PinsSPI>
+        <ICSPSPI/>
+        <PinsSerial>13:14</PinsSerial>
+    </MKRZero>
+    <ESP32-WROOM-DevKitV1><!--pin out for DevKit V1 36 pin, 30 pin board doesn't have GPIO0 broken out-->
+        <BoardName>esp32</BoardName>
+        <Package>esp32</Package>
+        <CPU/>
+        <MemorySize>1310720</MemorySize>
+        <MCU>esp32</MCU>
+        <!--VID_PID>'0x10C4_EA60'</VID_PID-->
+        <VID_PID/>
+        <NumPins>40</NumPins>
+        <PinsDigital>0 2 4:5 12:19 21:23 25:27 32:36 39</PinsDigital>
+        <PinsAnalog>2 4 12:15 25:27 32:36 39</PinsAnalog><!--GPIO 0 though Analog can't work as Input in this board-->
+        <PinsPWM>2 4:5 12:19 21:23 25:27 32:33</PinsPWM><!-- only 16 at a time-->
+        <PinsServo>2 4:5 12:19 21:23 25:27 32:33</PinsServo><!-- only 16 at a time-->
+        <PinsI2C>21:22</PinsI2C>
+        <PinsInterrupt>2 4:5 12:19 21:23 25:27 32:36 39</PinsInterrupt>
+        <PinsSPI>18 19 23 5</PinsSPI><!--not recommened to use SPI pins for anything else. HSPI SCLK = 14, MISO = 12, MOSI = 13, SS = 15 and VSPI SCLK = 18, MISO = 19, MOSI = 23, SS = 5-->
+        <ICSPSPI/>
+        <PinsSerial>16:17</PinsSerial>
+    </ESP32-WROOM-DevKitV1>
+    <ESP32-WROOM-DevKitC>
+        <BoardName>esp32</BoardName>
+        <Package>esp32</Package>
+        <CPU/>
+        <MemorySize>1310720</MemorySize>
+        <MCU>esp32</MCU>
+        <!--VID_PID>'0x10C4_EA60'</VID_PID-->
+        <VID_PID/>
+        <NumPins>40</NumPins>
+        <PinsDigital>0 2 4:5 12:19 21:23 25:27 32:36 39</PinsDigital>
+        <PinsAnalog>2 4 12:15 25:27 32:36 39</PinsAnalog><!--GPIO 0 though Analog can't work as Input in this board-->
+        <PinsPWM>2 4:5 12:19 21:23 25:27 32:33</PinsPWM><!-- only 16 at a time-->
+        <PinsServo>2 4:5 12:19 21:23 25:27 32:33</PinsServo><!-- only 16 at a time-->
+        <PinsI2C>21:22</PinsI2C>
+        <PinsInterrupt>2 4:5 12:19 21:23 25:27 32:36 39</PinsInterrupt>
+        <PinsSPI>18 19 23 5</PinsSPI><!--not recommened to use SPI pins for anything else. HSPI SCLK = 14, MISO = 12, MOSI = 13, SS = 15 and VSPI SCLK = 18, MISO = 19, MOSI = 23, SS = 5-->
+        <ICSPSPI/>
+        <PinsSerial>16:17</PinsSerial><!-- only serial 2 peripheral available on breakout -->
+    </ESP32-WROOM-DevKitC>
+    <RaspberryPiPico>
+        <BoardName>rpipico</BoardName>
+        <Package>rp2040</Package>
+        <CPU/>
+        <MemorySize>2093056</MemorySize>
+        <MCU>cortex-m0plus</MCU>
+        <VID_PID>'0x2e8a_0x000a','0x2e8a_0x010a','0x2e8a_0x400a','0x2e8a_0x410a','0x2e8a_0x800a','0x2e8a_0x810a','0x2e8a_0xc00a','0x2e8a_0xc10a'</VID_PID>
+        <NumPins>40</NumPins>
+        <PinsDigital>0:22 26:28 32</PinsDigital>
+        <PinsAnalog>26:28</PinsAnalog>
+        <PinsPWM>0:22 26:28</PinsPWM>
+        <PinsServo>0:3 6:9 10:11 20:28</PinsServo>
+        <PinsI2C>4:5 26:27</PinsI2C>
+        <PinsInterrupt>0:22 26:28</PinsInterrupt>
+        <ICSPSPI/>
+        <PinsSPI>12 14:15 16 18:19</PinsSPI>
+        <PinsSerial>0:1 8:9</PinsSerial>
+    </RaspberryPiPico>
+    <RaspberryPiPicoW>
+        <BoardName>rpipicow</BoardName>
+        <Package>rp2040</Package>
+        <CPU/>
+        <MemorySize>2093056</MemorySize>
+        <MCU>cortex-m0plus</MCU>
+        <VID_PID>'0x2e8a_0xf00a','0x2e8a_0xf10a'</VID_PID>
+        <NumPins>40</NumPins>
+        <PinsDigital>0:22 26:28 32</PinsDigital>
+        <PinsAnalog>26:28</PinsAnalog>
+        <PinsPWM>0:22 26:28</PinsPWM>
+        <PinsServo>0:3 6:9 10:11 20:28</PinsServo>
+        <PinsI2C>4:5 26:27</PinsI2C>
+        <PinsInterrupt>0:22 26:28</PinsInterrupt>
+        <ICSPSPI/>
+        <PinsSPI>12 14:15 16 18:19</PinsSPI>
+        <PinsSerial>0:1 8:9</PinsSerial>
+    </RaspberryPiPicoW>
+    <Teensy40>
+        <BoardName>teensy40</BoardName>
+        <Package>teensy</Package>
+        <CPU/>
+        <MemorySize>1048576</MemorySize>
+        <MCU>cortex-m7</MCU>
+        <VID_PID>'0x16c0_0x0483'</VID_PID>
+        <NumPins>40</NumPins>
+        <PinsDigital>0:39</PinsDigital>
+        <PinsAnalog>14:27</PinsAnalog>
+        <PinsPWM>0:15 18:19 22:25 28:29 33:39</PinsPWM>
+        <PinsServo>0:39</PinsServo>
+        <PinsI2C>18:19 16:17</PinsI2C>
+        <PinsInterrupt>0:39</PinsInterrupt>
+        <ICSPSPI/>
+        <PinsSPI>11:13</PinsSPI>
+        <PinsSerial>0:1 7:8 14:17 20:21 24:25 28:29</PinsSerial>
+    </Teensy40>
+    <Teensy41>
+        <BoardName>teensy41</BoardName>
+        <Package>teensy</Package>
+        <CPU/>
+        <MemorySize>1048576</MemorySize>
+        <MCU>cortex-m7</MCU>
+        <VID_PID>'0x16c0_0x0483'</VID_PID>
+        <NumPins>55</NumPins>
+        <PinsDigital>0:54</PinsDigital>
+        <PinsAnalog>14:27 38:41</PinsAnalog>
+        <PinsPWM>0:15 18:19 22:25 28:29 33:37 42:47</PinsPWM>
+        <PinsServo>0:39</PinsServo>
+        <PinsI2C>18:19 16:17</PinsI2C>
+        <PinsInterrupt>0:39</PinsInterrupt>
+        <ICSPSPI/>
+        <PinsSPI>11:13</PinsSPI>
+        <PinsSerial>0:1 7:8 14:17 20:21 24:25 28:29 34:35</PinsSerial>
+    </Teensy41>
+</Arduino>

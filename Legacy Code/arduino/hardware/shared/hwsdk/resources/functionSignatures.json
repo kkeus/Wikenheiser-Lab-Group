@@ -1,0 +1,234 @@
+{
+"matlabshared.dio.controller.writeDigitalPin":
+{
+    "inputs":
+    [
+        {"name":"obj", "kind":"required", "type":"matlabshared.dio.controller"},
+        {"name":"pin", "kind":"required", "type":"choices=obj.AvailableDigitalPins"},
+        {"name":"value", "kind":"required", "type":"choices={0,1}"}
+    ]
+},
+"matlabshared.dio.controller.readDigitalPin":
+{
+    "inputs":
+    [
+        {"name":"obj", "kind":"required", "type":"matlabshared.dio.controller"},
+        {"name":"pin", "kind":"required", "type":["char", "choices=obj.AvailableDigitalPins"]}
+    ],
+    "outputs":
+    [
+        {"name":"value", "type":"double"}
+    ]
+},
+"matlabshared.adc.controller.readVoltage":
+{
+    "inputs":
+    [
+        {"name":"obj", "kind":"required", "type":"matlabshared.adc.controller"},
+        {"name":"pin", "kind":"required", "type":"choices=obj.AvailableAnalogPins"}
+    ],
+    "outputs":
+    [
+        {"name":"value", "type":"double"}
+    ]
+},
+"matlabshared.adc.controller.readVoltage":
+{
+    "inputs":
+    [
+		{"name":"obj","kind":"required","type":"matlabshared.hwsdk.ForegroundAcquisitionUtility"},
+        {"name":"pin", "kind":"required", "type":["string", "choices=obj.availableAnalogPins"]},
+		{"name":"NumSamples", "kind":"namevalue", "type":["numeric", "scalar"]},
+        {"name":"SampleRate", "kind":"namevalue", "type":["numeric", "scalar"]},
+        {"name":"Duration", "kind":"namevalue", "type":["numeric", "scalar"]},
+        {"name":"OutputFormat", "kind":"namevalue", "type":["string", "choices=matlabshared.hwsdk.internal.tabCompletionHelper.TabCompletionHelper.readVoltageOutputFormat"]}
+    ]
+},    
+"matlabshared.pwm.controller.writePWMDutyCycle":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required","type":"matlabshared.pwm.controller"},
+        {"name":"pin", "kind":"required", "type":"choices=obj.AvailablePWMPins"},
+        {"name":"value", "kind":"required", "type":["numeric", "scalar"]}
+    ]
+},
+"matlabshared.pwm.controller.writePWMVoltage":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required","type":"matlabshared.pwm.controller"},
+        {"name":"pin", "kind":"required", "type":"choices=obj.AvailablePWMPins"},
+        {"name":"value", "kind":"required", "type":["numeric", "scalar"]}
+    ]
+},
+"matlabshared.hwsdk.controller.configurePin":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required","type":"matlabshared.hwsdk.controller"},
+        {"name":"pin", "kind":"required", "type":["char", "choices=obj.AvailablePins"]},
+        {"name":"mode", "kind":"required", "type":["char", "choices=matlabshared.hwsdk.internal.tabCompletionHelper.TabCompletionHelper.getSupportedPinModes(obj)"]}
+    ]
+},
+"matlabshared.hwsdk.controller.configurePin":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required","type":"matlabshared.hwsdk.controller"},
+        {"name":"pin", "kind":"required", "type":["char", "choices=obj.AvailablePins"]}
+    ],
+    "outputs":
+    [
+        {"name":"mode", "type":"char"}
+    ]
+},
+"matlabshared.i2c.controller.scanI2CBus":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required","type":"matlabshared.i2c.controller"},
+        {"name":"bus", "kind":"optional", "type":["numeric", "choices=num2cell(obj.AvailableI2CBusIDs)"]}
+    ],
+    "outputs":
+    [
+        {"name":"addrs", "type":["char", "cell"]}
+    ]
+},
+"matlabshared.hwsdk.controller.device":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required","type":"matlabshared.i2c.controller"},
+        {"name":"I2CAddress","kind":"namevalue","type":"choices=matlabshared.hwsdk.internal.tabCompletionHelper.TabCompletionHelper.getConnectedI2CDevices(obj)"},
+        {"name":"Bus", "kind":"namevalue", "type":"choices=num2cell(obj.AvailableI2CBusIDs)"},
+        {"name":"BitRate", "kind":"namevalue", "type":["numeric", "scalar"]}
+    ],
+    "outputs":
+    [
+        {"name":"i2cObj", "type":"matlabshared.i2c.device"}
+    ]
+},
+"matlabshared.i2c.device.read":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required","type":"matlabshared.i2c.device"},
+        {"name":"count","kind":"required","type":["numeric", "scalar"]},
+        {"name":"precision", "kind":"optional", "type":"choices=matlabshared.hwsdk.internal.tabCompletionHelper.TabCompletionHelper.getAvailableI2CPrecisions(obj)"}
+    ],
+    "outputs":
+    [
+        {"name":"dataOut", "type":["numeric", "vector"]}
+    ]
+},
+"matlabshared.i2c.device.write":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required","type":"matlabshared.i2c.device"},
+        {"name":"dataIn","kind":"required","type":["numeric", "vector"]},
+        {"name":"precision", "kind":"optional", "type":"choices=matlabshared.hwsdk.internal.tabCompletionHelper.TabCompletionHelper.getAvailableI2CPrecisions(obj)"}
+    ]
+},
+"matlabshared.i2c.device.readRegister":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required","type":"matlabshared.i2c.device"},
+        {"name":"register","kind":"required","type":[["char"], ["numeric", "scalar"]]},
+        {"name":"count","kind":"optional","type":["numeric", "scalar"]},
+        {"name":"precision", "kind":"optional", "type":"choices=matlabshared.hwsdk.internal.tabCompletionHelper.TabCompletionHelper.getAvailableI2CPrecisions(obj)"}
+    ],
+    "outputs":
+    [
+        {"name":"dataOut", "type":["numeric", "vector"]}
+    ]
+},
+"matlabshared.i2c.device.writeRegister":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required","type":"matlabshared.i2c.device"},
+        {"name":"register","kind":"required","type":[["char"], ["numeric", "scalar"]]},
+        {"name":"dataIn","kind":"required","type":["numeric", "vector"]},
+        {"name":"precision", "kind":"optional", "type":"choices=matlabshared.hwsdk.internal.tabCompletionHelper.TabCompletionHelper.getAvailableI2CPrecisions(obj)"}
+    ]
+},
+"matlabshared.hwsdk.controller.device":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required","type":"matlabshared.spi.controller"},
+        {"name":"SPIChipSelectPin","kind":"namevalue","type":["char", "choices=obj.AvailableDigitalPins"]},
+        {"name":"ActiveLevel", "kind":"namevalue", "type":"choices={'low', 'high'}"},
+        {"name":"SPIMode", "kind":"namevalue", "type":"choices={0,1,2,3}"},
+        {"name":"BitOrder", "kind":"namevalue", "type":"choices={'lsbfirst', 'msbfirst'}"},
+        {"name":"BitRate", "kind":"namevalue", "type":["numeric", "scalar"]}
+    ],
+    "outputs":
+    [
+        {"name":"spiObj", "type":"matlabshared.spi.device"}
+    ]
+},
+"matlabshared.spi.device.writeRead":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required","type":"matlabshared.spi.device"},
+        {"name":"dataIn","kind":"required","type":["numeric", "vector"]},
+        {"name":"precision", "kind":"optional", "type":"choices=matlabshared.hwsdk.internal.tabCompletionHelper.TabCompletionHelper.getAvailableSPIPrecisions(obj)"}
+    ],
+    "outputs":
+    [
+        {"name":"dataOut", "type":["numeric", "vector"]}
+    ]
+},
+"matlabshared.hwsdk.controller.device":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required","type":"matlabshared.serial.controller"},
+        {"name":"SerialPort","kind":"namevalue","type":["numeric", "choices=obj.AvailableSerialPortIDs"]},
+        {"name":"BaudRate", "kind":"namevalue", "type":"choices=matlabshared.hwsdk.internal.tabCompletionHelper.TabCompletionHelper.getAvailableBaudRates(obj)"},
+        {"name":"DataBits", "kind":"namevalue", "type":"choices=matlabshared.hwsdk.internal.tabCompletionHelper.TabCompletionHelper.getAvailableDataBits(obj)"},
+        {"name":"Parity", "kind":"namevalue", "type":"choices=matlabshared.hwsdk.internal.tabCompletionHelper.TabCompletionHelper.getAvailableParity(obj)"},
+        {"name":"StopBits", "kind":"namevalue", "type":"choices=matlabshared.hwsdk.internal.tabCompletionHelper.TabCompletionHelper.getAvailableStopBits(obj)"},
+        {"name":"Timeout", "kind":"namevalue", "type":["numeric", "scalar"]}
+    ],
+    "outputs":
+    [
+        {"name":"serialObj", "type":"matlabshared.serial.device"}
+    ]
+},
+"matlabshared.serial.device.read":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required","type":"matlabshared.serial.device"},
+        {"name":"count","kind":"required","type":["numeric", "scalar"]},
+        {"name":"precision", "kind":"optional", "type":"choices=matlabshared.hwsdk.internal.tabCompletionHelper.TabCompletionHelper.getAvailableSerialPrecisions(obj)"}
+    ],
+    "outputs":
+    [
+        {"name":"dataOut", "type":["numeric", "vector"]}
+    ]
+},
+"matlabshared.serial.device.write":
+{
+    "inputs":
+    [
+        {"name":"obj","kind":"required","type":"matlabshared.serial.device"},
+        {"name":"dataIn","kind":"required","type":["numeric", "vector"]},
+        {"name":"precision", "kind":"optional", "type":"choices=matlabshared.hwsdk.internal.tabCompletionHelper.TabCompletionHelper.getAvailableSerialPrecisions(obj)"}
+    ]
+},
+"matlabshared.addon.controller.addon":
+{
+    "inputs":
+    [
+		{"name":"obj","kind":"required","type":"matlabshared.addon.controller"},
+        {"name":"library","kind":"required","type":["char", "choices=matlabshared.hwsdk.internal.tabCompletionHelper.TabCompletionHelper.getValidAddonLibraries(obj)"]}
+    ]
+}
+}
